@@ -1,0 +1,49 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: tds-front-wireless-mobile
+  labels:
+    app: tds-front-wireless-mobile
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: tds-front-wireless-mobile
+  strategy:
+    type: RollingUpdate
+    rollingUpdate:
+      maxSurge: 1
+      maxUnavailable: 1
+  template:
+    metadata:
+      labels:
+        app: tds-front-wireless-mobile
+        version: 0.0.1
+      annotations:
+        prometheus.io/scrape: "true"
+        prometheus.io/port: "8090"
+        prometheus.io/path: /prometheus
+    
+    spec:
+      imagePullSecrets:
+        - name: docker-secret-tds-dev
+      containers:
+      - name: tds-front-wireless-mobile
+        # env:
+        #   - name: SPRING_PROFILES_ACTIVE
+        #     value: dev
+        #   - name: APP_VERSION
+        #     valueFrom:
+        #       fieldRef:
+        #         fieldPath: metadata.labels['version']  
+        image: skt-tds-dev-registry.cloudzcp.io/tds-dev/tds-front-wireless-mobile:develop
+        ports:
+        - containerPort: 80
+        imagePullPolicy: Always
+        resources:
+          requests:
+            cpu: "1000m"
+            memory: "2048Mi"
+          limits: 
+            cpu: "2000m"
+            memory: "2048Mi"

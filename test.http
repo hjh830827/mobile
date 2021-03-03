@@ -1,0 +1,3 @@
+###
+GET http://biz.epost.go.kr/KpostPortal/openapi2?regkey=2d176805c16437ff71608611260318&target=postNew&query=신정중앙로4길&countPerPage=20&currentPage=1
+content-type: application/json

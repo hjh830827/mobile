@@ -1,0 +1,42 @@
+{
+  "name": "project-front-nuxt",
+  "version": "1.0.0",
+  "private": true,
+  "scripts": {
+    "dev": "node server.js",
+    "build": "nuxt build",
+    "start": "NODE_ENV=production node server.js",
+    "generate": "nuxt generate",
+    "lint:js": "eslint --ext .js,.vue --ignore-path .gitignore .",
+    "lint": "npm run lint:js"
+  },
+  "dependencies": {
+    "axios": "^0.21.0",
+    "core-js": "^3.6.5",
+    "cors": "^2.8.5",
+    "lodash": "^4.17.20",
+    "moment": "^2.29.1",
+    "nuxt": "^2.14.6",
+    "vue-awesome-swiper": "^3.1.3",
+    "vue-client-only": "^2.0.0",
+    "xml-js": "^1.6.11",
+    "zipkin": "^0.22.0",
+    "zipkin-axios": "^0.2.1",
+    "zipkin-transport-http": "^0.22.0"
+  },
+  "devDependencies": {
+    "@nuxtjs/eslint-config": "^3.1.0",
+    "@nuxtjs/eslint-module": "^2.0.0",
+    "babel-eslint": "^10.1.0",
+    "eslint": "^7.10.0",
+    "eslint-config-prettier": "^6.12.0",
+    "eslint-plugin-nuxt": "^1.0.0",
+    "eslint-plugin-prettier": "^3.1.4",
+    "gulp": "^4.0.2",
+    "gulp-replace": "^1.0.0",
+    "gulp-replace-task": "^0.11.0",
+    "prettier": "^2.1.2",
+    "sass": "^1.30.0",
+    "sass-loader": "^10.1.0"
+  }
+}

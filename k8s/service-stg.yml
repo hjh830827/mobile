@@ -1,0 +1,12 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: tds-front-wireless-mobile
+spec:
+  ports:
+  - name: http
+    port: 80
+    targetPort: 80
+  selector:
+    app: tds-front-wireless-mobile
+    version: 0.0.1
